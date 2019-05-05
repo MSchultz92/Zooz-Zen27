@@ -10,6 +10,7 @@
  *            - Removed Tile and Simulator Sections
  *            - Replaced physicalgraph with hubitat
  *            - Replaced return response(delayBetween(commands, xxx)) with return delayBetween(commands, xxx)
+ * 2019-05-05 - Fixed a bug in the original code that wouldn't enable the auto off function
  *
  *  Supported Command Classes
  *         Association v2
@@ -188,7 +189,7 @@ def updated(){
 	commands << parmSet(6, 4, setOnTimer)
 	commands << parmSet(5, 1, setAutoTurnon)
 	commands << parmSet(4, 4, setOffTimer)
-	commands << parmSet(3, 1, setAutoTurnon)
+	commands << parmSet(3, 1, setAutoTurnoff)
 	commands << parmSet(2, 1, setLedIndicator)
 	commands << parmSet(1, 1, setInvertSwitch)
 
